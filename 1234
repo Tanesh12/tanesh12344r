@@ -1,0 +1,16 @@
+import math
+
+def solution(N):
+    min_perimeter = float('inf')
+
+    for i in range(1, int(math.sqrt(N)) + 1):
+        if N % i == 0:
+            
+            factor1 = i
+            factor2 = N // i
+            perimeter = 2 * (factor1 + factor2)
+
+            
+            min_perimeter = min(min_perimeter, perimeter)
+
+    return min_perimeter
